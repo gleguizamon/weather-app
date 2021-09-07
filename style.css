@@ -3,6 +3,70 @@ body {
   background: #0a1f44;
   color: white;
 }
+.encabezado {
+  text-align: center;
+}
+h1 {
+  font-weight: bold;
+  font-size: 4rem;
+  letter-spacing: 0.02em;
+}
+input {
+  font-size: 2rem;
+  height: 40px;
+  padding: 5px 5px 10px;
+  border: none;
+  border-bottom: 1px solid white;
+  background: none;
+  outline: none;
+  color: white;
+}
+button {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  padding: 15px 20px;
+  margin-left: 15px;
+  border-radius: 5px;
+  background: #ff1e42;
+  outline: none;
+  color: white;
+  border: none;
+}
+button:hover {
+  transition: 50ms;
+  background: #c3112d;
+}
 .container {
   visibility: hidden;
+  background-color: aquamarine;
+  color: #1e2432;
+  width: 700px;
+  height: 300px;
+  border-radius: 20px;
+  margin-left: 50px;
+  margin: 50px auto;
+}
+ul {
+  list-style: none;
+}
+.ciudades {
+  padding: 40px 10%;
+}
+#ciudad, #pais {
+  font-size: 2rem;
+  font-weight: bold;
+  color: 1e2432;
+}
+#temperatura {
+  font-size: 5rem;
+  font-weight: bold;
+}
+img {
+  width: 4rem;
+}
+#descripcion {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #717681;
 }

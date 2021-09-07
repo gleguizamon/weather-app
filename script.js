@@ -8,13 +8,17 @@ function showcityname() {
   var description;
   var apiKey = '5dd765a29b95b2e058dfd9f33a1dbd0d';
 
+  if (ciudad === '') {
+    alert('El campo esta vacío');
+    return false;
+  }
 
-/**
- * Get all data of the local weather.
- *
- * @param {Data} data The response of the API
- * @returns {Object} All data of the location
- */
+  /**
+   * Get all data of the local weather.
+   *
+   * @param {Data} data The response of the API
+   * @returns {Object} All data of the location
+   */
 
   $.getJSON(
     'http://api.openweathermap.org/data/2.5/weather?q=' +
@@ -22,7 +26,7 @@ function showcityname() {
       '&appid=' +
       apiKey +
       '&units=metric',
-    function(data) {
+    function (data) {
       city_name = data['name'];
       country_name = data['sys']['country'];
       temp = data['main']['temp'];
@@ -36,7 +40,8 @@ function showcityname() {
       // convert
       temp = temp.toFixed(1);
       temp = temp + ' °C';
-      description = description.toUpperCase()
+      description = description.toUpperCase();
+      country_name = ", " + country_name
 
       // import
       document.querySelector('.container').style.visibility = 'visible';
@@ -46,7 +51,9 @@ function showcityname() {
       document.querySelector('#wicon').textContent = weather_icon;
       document.querySelector('#pais').textContent = country_name;
     }
-  );
+  ).fail(function () {
+    alert('Ciudad no encontrada');
+  });
 }
 
 document.querySelector('button').addEventListener('click', showcityname);
